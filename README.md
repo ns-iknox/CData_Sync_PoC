@@ -1,5 +1,5 @@
 # CData_Sync_PoC
-Quick docker setup for CData PoC
+Quick docker setup for CData Sync PoC
 
 * run `build.sh`
 * run `run.sh`
