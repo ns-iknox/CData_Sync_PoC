@@ -1,0 +1,18 @@
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+  <Set name="contextPath">/</Set>
+  <Set name="war"><SystemProperty name="jetty.home" default="."/>/../www/ROOT.war</Set>
+  <Set name="extractWAR">true</Set> 
+  <Set name="tempDirectory"><SystemProperty name="jetty.home" default="."/>/../www/datasync</Set> 
+  <Set name="persistTempDirectory">true</Set> 
+  <Get name="securityHandler">
+    <Set name="loginService">
+      <New class="org.eclipse.jetty.security.HashLoginService">
+        <Set name="name">CData Data Sync Realm</Set>
+        <Set name="config"><SystemProperty name="jetty.home" default="."/>/etc/CData.DataSync.properties</Set>
+      </New>
+    </Set>
+  </Get>
+  <Call name="setAttribute">
+    <Arg>org.eclipse.jetty.server.webapp.WebInfIncludeJarPattern</Arg>
+    <Arg>disabled</Arg>
+  </Call></Configure>

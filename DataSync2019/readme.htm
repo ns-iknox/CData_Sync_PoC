@@ -1,0 +1,513 @@
+<html>
+	<head>
+		<title>CData Data Sync - Readme File</title>
+		<style>
+		
+#highlight 	{ background-image:url(spotlights.png);}
+#header 	{ background-image:url(header.png);}
+#header .pipelist li { border-left: 1px solid #1A72B9; }
+#header .pipelist a { color: #1A72B9;}
+#header .logo {	
+	background: url(logo.png);
+	width:150px; height:50px; top:18px;
+}
+
+html, body {
+	height: 100%;
+}
+
+body, p, h1, h2, h3, li, td {
+	font-family: 'Segoe UI', Verdana, Arial;
+}
+
+body {
+	color: #000000; 
+	margin:0; padding:0;
+	font-size : .8em;	
+	width:100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -30px; /* the bottom margin is the negative value of the footer's height */
+}
+
+#footer, .push {
+	height: 30px; /* .push must be the same height as .footer */
+}
+
+#highlight {
+	background-repeat:no-repeat;
+	background-position:top left;
+	width:100%;
+	height:60px;
+}
+
+#header {
+	width:100%;
+	height:60px;
+	background-repeat:repeat-x;
+	background-position:top left;	
+	position:relative;
+}
+#header .logo {	
+	background-repeat:no-repeat;
+	background-position:top left;
+	text-indent:-9999px;
+	overflow:hidden;
+	left:15px;
+	position:absolute;
+	-ms-interpolation-mode:bicubic;
+}
+
+#header .pipelist {    
+    overflow: hidden;
+    margin-right:-5px;
+    padding-right:-5px;
+	position:absolute;
+	bottom:5px; 
+	right:10px;
+	font-size:.85em;
+}
+
+#header .pipelist ul {
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header .pipelist li {
+    float: left;
+    line-height: 1.1em;
+    margin: 0 .7em 2px -.7em;
+    padding: 0 .7em 0 .7em;
+}
+
+#header .pipelist a {
+	text-decoration:none;
+}
+#header .pipelist a:hover {
+	text-decoration:underline;
+}
+
+#content {
+	text-align:left;
+	padding:0 15px 0 15px;
+	padding-bottom:40px;
+}
+
+#footer {
+	width:100%;
+	background-color:whitesmoke;
+	border-top:1px solid gainsboro;	
+	font-size:.8em;
+	padding-top:8px;
+	padding-bottom:0px;
+	color:dimgray;
+	white-space:nowrap;
+}
+
+img {
+	-ms-interpolation-mode:bicubic;
+}
+
+h1 {
+	font-weight : bold;
+	font-size : 1.3em;
+	margin-top:.7em;
+	margin-bottom: 1em;
+	border-bottom: 1px silver solid;
+	padding-bottom: 8px;
+	padding-top:0px;
+	color: #1A72B9;
+}
+h2 {
+	font-weight : bold;
+	font-size : 1.05em;
+	margin-bottom: 0.25em;
+	color: #1A72B9;
+}
+h3 {
+	font-weight : bold;
+	font-size : 1em;
+	margin-bottom: 0.25em;
+	color: #125095;
+}
+
+p {
+	margin:0px 0em 1em 0em;
+	line-height:1.5em;
+}
+		   
+li {
+	margin-bottom: 4pt;
+}
+		   
+a:active, a:link, a:visited {
+	text-decoration:underline;
+}
+
+a:hover		{
+	text-decoration:none;
+}
+
+
+table {
+	font-size: 1em; 
+	margin-top: 1em 0 1em 0;		
+	border-collapse:collapse;
+  width:90%;
+}
+
+tr {
+	vertical-align: top;	
+}
+
+th {
+  background-color: #EDF6FF; 
+  vertical-align: bottom;  
+  color:#215A8F;
+  padding:5px;
+  border-bottom:1px solid #90ADBC;
+}
+
+td {
+	vertical-align: top; 
+	margin-top: .25em;	
+	padding:10px;
+	border-bottom:1px solid #EDF6FF;
+}
+
+td, th {
+	text-align: left; 
+	padding-left:1em;  
+	border-right:2px solid white;
+}
+
+small {
+	font-size: .85em;
+}
+
+tt {
+	font-family: monospace;
+	font-size:1.1em;
+}
+
+pre {
+	font-family: Consolas, Monaco, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+	font-size: 1.02em;
+	background-color:#F7F7F7;
+	padding:1px 5px;
+	/* Wrap content in pre tags if too long */
+	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.syntax {
+	margin-top: 0em;
+	margin-left: 1em;
+	margin-right: 1em;
+	background-color: whitesmoke;
+}
+
+
+hr {
+	color: silver;
+	background-color: silver;
+  height: 1px;
+  border:none;
+}
+
+#toc a {
+	font-family: 'Segoe UI', Verdana, Arial !important;
+	text-decoration:none !important;
+}
+
+#toc a:hover {	
+	text-decoration:underline !important;
+}
+
+/* Style for RSBScript */
+.source .rsbkey { color: #047; font-weight: normal; } /* CData Keyword */
+.source .nt { color: #000; font-weight: bold; } /* This is the close tag make it */
+.source .rsbattr { color: maroon; font-weight: bold; } /* CData Attr name attr= and item= also in [ attr ] */
+.source .rsbattrf { color: maroon; font-weight: bold;} /* CData Attr name in a formatter */
+.source .rsbbrace { color: #0000FF; font-weight: bold; } /* Color for the brace [ ] */
+.source .rsbform { color: green;}  /* CData Formatter [ attr |.. ] */
+.source .rsbop { color: blue; font-weight: bold; } /* CData Operation name */
+.source .s { color: dimgray; } /* Literal.String */
+.source .na { color: #333; font-weight: bold; } /* All the attribute name*/
+
+.source .hll { background-color: #ffffcc }
+.source .c { color: #408080; font-style: italic } /* Comment */
+.source .err { border: 1px solid #FF0000 } /* Error */
+.source .k { color: #008000; font-weight: bold } /* Keyword */
+.source .o { color: #666666 } /* Operator */
+.source .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.source .cp { color: #BC7A00 } /* Comment.Preproc */
+.source .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.source .cs { color: #408080; font-style: italic } /* Comment.Special */
+.source .gd { color: #A00000 } /* Generic.Deleted */
+.source .ge { font-style: italic } /* Generic.Emph */
+.source .gr { color: #FF0000 } /* Generic.Error */
+.source .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.source .gi { color: #00A000 } /* Generic.Inserted */
+.source .go { color: #808080 } /* Generic.Output */
+.source .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.source .gs { font-weight: bold } /* Generic.Strong */
+.source .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.source .gt { color: #0040D0 } /* Generic.Traceback */
+.source .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.source .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.source .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.source .kp { color: #008000 } /* Keyword.Pseudo */
+.source .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.source .kt { color: #B00040 } /* Keyword.Type */
+.source .m { color: #666666 } /* Literal.Number */
+
+.source .nb { color: #008000 } /* Name.Builtin */
+.source .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.source .no { color: #880000 } /* Name.Constant */
+.source .nd { color: #AA22FF } /* Name.Decorator */
+.source .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.source .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.source .nf { color: #0000FF } /* Name.Function */
+.source .nl { color: #A0A000 } /* Name.Label */
+.source .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.source .nt { color: #333; font-weight: normal } /* Name.Tag */
+.source .nv { color: #19177C } /* Name.Variable */
+.source .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.source .w { color: #bbbbbb } /* Text.Whitespace */
+.source .mf { color: #666666 } /* Literal.Number.Float */
+.source .mh { color: #666666 } /* Literal.Number.Hex */
+.source .mi { color: #666666 } /* Literal.Number.Integer */
+.source .mo { color: #666666 } /* Literal.Number.Oct */
+.source .sb { color: #BA2121 } /* Literal.String.Backtick */
+.source .sc { color: #BA2121 } /* Literal.String.Char */
+.source .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.source .s2 { color: #BA2121 } /* Literal.String.Double */
+.source .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.source .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.source .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.source .sx { color: #008000 } /* Literal.String.Other */
+.source .sr { color: #BB6688 } /* Literal.String.Regex */
+.source .s1 { color: #BA2121 } /* Literal.String.Single */
+.source .ss { color: #19177C } /* Literal.String.Symbol */
+.source .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.source .vc { color: #19177C } /* Name.Variable.Class */
+.source .vg { color: #19177C } /* Name.Variable.Global */
+.source .vi { color: #19177C } /* Name.Variable.Instance */
+.source .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+
+		</style>
+  </head>
+	<body>
+		<div id="wrapper">
+			<div id="content">
+				<h1>CData Data Sync - Readme File</h1>
+				
+				<h2>Welcome to CData Data Sync</h2>
+        <p>
+          CData Data Sync comes bundled with a web server, built on top of Jetty, which should be ideal for most scenarios. This web server 
+          is named cdata.datasync.jar and is located in the root of the installation directory. To start CData Data Sync from 
+          this web server, simply run this jar like so:
+          <pre>java -jar cdata.datasync.jar</pre>
+        </p>
+        <p>
+          The configuration for this web server is contained within cdata.xml, which may be modified to suit your deployment. Some 
+          examples of modifications are provided in the contents of cdata.xml within the XML comments, but any valid jetty.xml 
+          configuration should be accepted. 
+        </p>
+        <p>
+          Additionally, CData Data Sync also provides a "service" script which may be used to set up a systemd or init.d service on unix systems. 
+        </p>
+        <p>
+          The application may also be hosted in any Java servlet container. The installation package includes 
+          a .war file, located in the root of the installation directory, which can be deployed to the Java 
+          Web server. This document provides instructions for 5 
+          of the most common Java servers (Tomcat, JBoss, WebSphere, WebLogic, and Jetty), but if you need 
+          assistance installing to a server not discussed here, email 
+          <a href="mailto:support@cdata.com">support@cdata.com</a> and we will be happy to assist you.
+        </p>
+
+        <ul>
+          <li><a href='#tomcat'>Installing to Tomcat</a></li>
+          <li><a href='#jboss'>Installing to JBoss</a></li>
+          <li><a href='#websphere'>Installing to WebSphere</a></li>
+          <li><a href='#weblogic'>Installing to WebLogic</a></li>
+          <li><a href='#jetty'>Installing to Jetty</a></li>
+        </ul>
+        
+        <h2 id="tomcat">Installing to Tomcat</h2>
+
+<p>
+
+To deploy the .war to Tomcat, you can copy the .war file into the webapps folder. Or, you can deploy the .war from within the management console in Tomcat. </p>
+
+<p>
+After you deploy the .war, allow Tomcat users to access the application: Assign the "cdata_admin" role 
+to the user you want to be the administrator of the application. If you are using the default 
+user realm for Tomcat, you can add these roles by editing the tomcat-users.xml file located here: 
+$CATALINA_BASE/conf/tomcat-users.xml. In the following example, the admin user has been given the necessary roles for administrative access to the application:</p>
+
+<pre>
+&lt;user name="admin" password="admin" roles="cdata_admin,admin-gui,manager-gui,manager-status,manager-script,manager-jmx" /&gt;</pre>
+
+<p>
+For more information about roles, see the in-line documentation for security in the DataSync administration console.</p>
+<p>
+Allow the user of the process running the Java servlet container read/write access to the data directory: </p>
+<ul>
+  <li>Windows: C:\ProgramData\CData\datasync\ 
+  <li>Unix or Mac OS X: ~/cdata/datasync/</ul>
+<p>
+Restart your Tomcat server for the changes to take effect.
+
+You can now log in to the application.
+
+        </p>
+				<h2 id="jboss">Installing to JBoss</h2>
+<p>
+To deploy a .war to JBoss, you can copy the .war into the JBOSS_HOME/standalone/deployments subfolder. Or, you can also use the JBoss Administration Console to install the .war.</p>
+
+
+<p>
+To grant your JBoss user access to the application, assign the user the  "cdata_admin" role. If you are using the default user realm for JBoss, 
+you can add this role by executing the add-user.bat file that comes with the JBoss server.
+        </p>
+<p>
+Allow the user of the process running the Java servlet container read/write access to the data directory: </p>
+<ul>
+  <li>Windows: C:\ProgramData\CData\datasync\ 
+  <li>Unix or Mac OS X: ~/cdata/datasync/</ul>
+        <h2 id="websphere">Installing to WebSphere</h2>
+
+<p>
+To deploy the application .war to WebSphere, you must first create a deployment plan. You can use the Plan Creator wizard in WebSphere to create a plan and then deploy the .war. You can initialize the wizard from the WebSphere administration console. </p>
+<p>
+Assign the "cdata_admin" role to the user or group you will use to log into the application. The example plan below allows access to the system administrator.</p>
+<pre>
+&lt;web-app xmlns="http://geronimo.apache.org/xml/ns/j2ee/web-2.0.1"&gt;
+  &lt;dep:environment xmlns:dep="http://geronimo.apache.org/xml/ns/deployment-1.2"&gt;
+    &lt;dep:moduleId&gt;
+      &lt;dep:groupId&gt;default&lt;/dep:groupId&gt;
+      &lt;dep:artifactId&gt;CData&lt;/dep:artifactId&gt;
+      &lt;dep:version&gt;1371673558693&lt;/dep:version&gt;
+      &lt;dep:type&gt;war&lt;/dep:type&gt;
+    &lt;/dep:moduleId&gt;
+    &lt;dep:dependencies/&gt;
+  &lt;/dep:environment&gt;
+  &lt;context-root&gt;CData&lt;/context-root&gt;
+  &lt;security-realm-name&gt;geronimo-admin&lt;/security-realm-name&gt;
+  &lt;app:security xsi:type="sec:securityType" xmlns:sec="http://geronimo.apache.org/xml/ns/security-2.0" xmlns:app="http://geronimo.apache.org/xml/ns/j2ee/application-2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+    &lt;sec:role-mappings&gt;
+      &lt;sec:role role-name="cdata_admin"&gt;
+        &lt;sec:principal name="system" class="org.apache.geronimo.security.realm.providers.GeronimoUserPrincipal"/&gt;
+      &lt;/sec:role&gt;
+      &lt;sec:role role-name="admin"/&gt;
+    &lt;/sec:role-mappings&gt;
+  &lt;/app:security&gt;
+&lt;/web-app&gt;</pre>
+
+<p>Allow the user of the process running the Java servlet container read/write access to the data directory: </p>
+<ul>
+  <li>Windows: C:\ProgramData\CData\datasync\ 
+  <li>Unix or Mac OS X: ~/cdata/datasync/</ul>
+<p>
+After completing the wizard and setting the necessary permissions, you can log into the application.
+        </p>
+        <h2 id="weblogic">Installing to WebLogic</h2>
+
+<p>
+Follow the steps below to use the deployment wizard in WebLogic to deploy the .war.</p>
+<ol>
+<li>
+<p>
+Click Deployments and in the Deployments table, click Install.</p></li>
+<li>
+<p>
+Enter the path to the .war and then select the .war from the list.</p>
+<li>
+<p>
+Select "Install this deployment as an application".</p>
+<li>
+<p>
+Select "Custom Roles: Use roles 
+that are defined in the Administration Console; use policies that are defined in the deployment
+descriptor." Selecting this option will allow you to manage the roles and users in 
+WebLogic's administration console, while WebLogic will load the roles and policies defined in the application.</p></li></ol>
+
+<p>
+After deploying, allow WebLogic users to access  
+the application.</p>
+<ol>
+<li>
+<p>
+In the WebLogic
+administration console, click Deployments. In the Deployments table, click the name for the application. </p>
+<li>
+<p>
+Click Security -> Application Scope -> Roles -> New. </p>
+<li>
+<p>
+Add the "cdata_admin" Web Application Scoped role and assign the role to a user or group who will administer the application.</p></li></ol>
+<p>Allow the user of the process running the Java servlet container read/write access to the data directory: </p>
+<ul>
+  <li>Windows: C:\ProgramData\CData\datasync\ 
+  <li>Unix or Mac OS X: ~/cdata/datasync/</ul>
+<p>
+You can now log in to the application. </p>
+        
+        <h2 id="jetty">Installing to Jetty</h2>
+        <p>
+Copy the .war into Jetty's webapps folder.</p>
+
+<p>
+Before starting Jetty, allow Jetty users to access the application by assigning the "cdata_admin" role. For example, you can add this role to the admin user by opening the file %JETTY_HOME%/etc/realm.properties.
+The properties for the user (composed of the password, followed by the user's roles) should resemble the example below:</p>
+<pre>
+admin: test,server-administrator,content-administrator,admin,user,cdata_admin</pre>
+
+
+<p>
+You must also configure a login service for the application with the name "CDataRealm". Below is a HashLoginService example:</p>
+<pre>
+&lt;Call name="addBean"&gt;
+  &lt;Arg&gt;
+    &lt;New class="org.eclipse.jetty.security.HashLogin"&gt;
+      &lt;Set name="name">CDataRealm&lt;/Set&gt;
+      &lt;Set name="config"&gt;&lt;Property name="jetty.home" default="."/&gt;/etc/realm.properties&lt;/Set&gt;
+      &lt;Set name="refreshInterval"&gt;0&lt;/Set&gt;
+    &lt;/New&gt;
+  &lt;/Arg&gt;
+&lt;/Call&gt;</pre>
+
+<p>Allow the user of the process running the Java servlet container read/write access to the data directory: </p>
+<ul>
+  <li>Windows: C:\ProgramData\CData\datasync\ 
+  <li>Unix or Mac OS X: ~/cdata/datasync/</ul>
+    You can then start the Jetty server and log in to the application.</p>
+				<h2>Thank You!</h2>
+				<P>
+          If you have any further questions, check the in-line help files for additional information, or contact 
+          us at <a href="mailto:support@cdata.com">support@cdata.com</a>. Your feedback is appreciated, and customer 
+          comments and suggestions are the most important drivers behind new features and improvements in our products.
+				</p>
+			</div>
+			<div class="push"></div>
+		</div>
+		<div id="footer">
+			<center>
+				CData Apps - Copyright (c) 2019 CData Software, Inc. - All rights reserved. For more information, visit our website at <a href="http://www.CData.com/?src=readme&bld=4716">www.cdata.com</a>.
+			</center>
+		</div>
+
+	</body></html>
