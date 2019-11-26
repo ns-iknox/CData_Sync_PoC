@@ -1,2 +1,2 @@
 #!/bin/bash
-docker image build -t poc/cdata_sync ./
+docker build -t poc_cdata_sync_img .
