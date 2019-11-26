@@ -1,2 +1,5 @@
 #!/bin/bash
-docker build -t poc_cdata_sync_img .
+
+IMG_NAME='poc_cdata_sync_img'
+
+docker build -t ${IMG_NAME} .
