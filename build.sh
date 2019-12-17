@@ -1,9 +1,17 @@
 #!/bin/bash
 
 IMG_NAME='poc_cdata_sync_img'
+WAR_CHECKSUM='2a8f906235fac6329dc8e9b143e291365357d9b9'
 
-if [ -n "$(which git-lfs)" ] && [ -n "$(grep 'filter \"lfs\"' ~/.gitconfig)" ]; then
-  docker build -t ${IMG_NAME} .
+LOCAL_WAR_CHECKSUM=$(shasum DataSync2019/www/ROOT.war | cut -f1 -d' ')
+
+
+if [ $LOCAL_WAR_CHECKSUM != $WAR_CHECKSUM ]; then
+  #debug
+  # echo "|${LOCAL_WAR_CHECKSUM}| != |${WAR_CHECKSUM}|"
+  echo "Slow your roll, it looks like your ROOT.war file is the wrong size!"
+  echo "Did you install and initalize git-lfs _before_ you cloned this repo?"
+  echo "[Build cancelled]"
 else
-  echo "ERROR! git-LFS doesn't seem to be installed and/or initalized! Exiting!"
+  docker build -t ${IMG_NAME} .
 fi
