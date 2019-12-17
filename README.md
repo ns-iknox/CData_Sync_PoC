@@ -1,7 +1,7 @@
 # CData_Sync_PoC
 Quick docker setup for CData Sync PoC
 
-###Important note!
+### Important note!
 In order to correctly clone this repo you _must_ have [gitLFS installed](https://git-lfs.github.com/)!
 * install gitLFS `brew install git-lfs`
 * initialize git-lfs hooks for your user (modifies `~/.gitconfig`) `git lfs install`
